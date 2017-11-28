@@ -12,11 +12,11 @@
     <link rel="stylesheet" href="css/common.css">
 </head>
 <body class="easyui-layout">
-<div data-options="region:'north'" style="height:70px;padding-left:10px;">
+<div data-options="region:'north'" style="height:70px;padding-left:10px;text-align: center;">
     <h2>金溪金融后台管理系统</h2>
 </div>
 <div data-options="region:'south'" style="padding:5px;background:#eee;">
-    系统版本：V8.11.9
+    系统版本：V0.01
 </div>
 <div data-options="region:'west'" style="width:200px;">
     <div id="menu" class="easyui-accordion">
@@ -24,7 +24,6 @@
             <ul class="easyui-tree">
 
                 <li data-options="attributes:{'href':'user-list'}">查询用户</li>
-
 
             </ul>
         </div>
@@ -64,7 +63,9 @@
 </div>
 <div data-options="region:'center'" style="background:#eee;">
     <div id="tab" class="easyui-tabs" data-options="fit:true">
-        <div title="欢迎页面" style="padding:20px;">千锋欢迎你</div>
+        <div title="欢迎页面" style="padding:20px;text-align: center;">
+            <h3>欢迎登录牛X牛X金溪后台管理</h3>
+        </div>
     </div>
 </div>
 <!-- jquery -->
