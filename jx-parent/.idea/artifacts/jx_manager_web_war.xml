@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="jx-manager-web:war">
+    <output-path>$PROJECT_DIR$/../jx-manager/jx-manager-web/target</output-path>
+    <root id="archive" name="tt-manager-web.war">
+      <element id="artifact" artifact-name="jx-manager-web:war exploded" />
+    </root>
+  </artifact>
+</component>
