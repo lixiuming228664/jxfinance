@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qf.jxfinance.dao.UserCustomMapper" >
+
+    <sql id="Base_Column_List" >
+        id, user_name AS userName,
+        user_realname AS userRealname,
+        login_password AS loginPassword,
+        pay_password AS payPass,
+        email, phone, address,
+        id_card AS idCard,
+        bank_card_1 AS bankCard1,
+        bank_card_2 AS bankCard2,
+        image, 'level', state
+    </sql>
+
+    <select id="countUser">
+        select
+        <include refid="Base_Column_List"></include>
+
+
+    </select>
+
+
+    <select id="listUser">
+
+
+    </select>
+
+</mapper>
