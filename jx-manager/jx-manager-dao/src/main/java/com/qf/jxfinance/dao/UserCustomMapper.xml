@@ -11,20 +11,20 @@
         id_card AS idCard,
         bank_card_1 AS bankCard1,
         bank_card_2 AS bankCard2,
-        image, 'level', state
+        image, `level`,
+        state
     </sql>
 
-    <select id="countUser">
-        select
-        <include refid="Base_Column_List"></include>
-
-
+    <select id="countUser" resultType="_long">
+        select count(1) from user;
     </select>
 
 
-    <select id="listUser">
-
-
+    <select id="listUser" resultType="com.qf.jxfinance.pojo.po.User">
+        select
+        <include refid="Base_Column_List"></include>
+        from user
+        limit #{page.offset},#{page.rows}
     </select>
 
 </mapper>
