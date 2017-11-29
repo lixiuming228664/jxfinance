@@ -30,9 +30,9 @@ public class User {
     private Integer level;
     //1.正常 2.禁用 3.删除
     private Integer state;
-
+    //创建日期
     private Date created;
-
+    //更新日期
     private Date updated;
 
     public Long getId() {

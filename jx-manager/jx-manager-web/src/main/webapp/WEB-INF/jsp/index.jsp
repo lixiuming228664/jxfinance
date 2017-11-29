@@ -82,7 +82,7 @@
     ttshop.onTreeClick();
 </script>
 <script>
-    moment.locale();
+    moment.locale("zh-cn");
 </script>
 </body>
 </html>
