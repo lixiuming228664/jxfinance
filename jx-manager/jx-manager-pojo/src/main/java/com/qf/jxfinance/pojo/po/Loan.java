@@ -1,21 +1,27 @@
 package com.qf.jxfinance.pojo.po;
 
 public class Loan {
-    private Long id;
-
+    private Integer id;
     private Integer loanTime;
+    private Integer status;
 
-    private Boolean repayment;
+    public Integer getStatus() {
+        return status;
+    }
 
-    private Double interestRate;
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
 
-    private Integer state;
+    private Boolean repayment;//还款方式
 
-    public Long getId() {
+    private Double interestRate;//利率
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -41,13 +47,5 @@ public class Loan {
 
     public void setInterestRate(Double interestRate) {
         this.interestRate = interestRate;
-    }
-
-    public Integer getState() {
-        return state;
-    }
-
-    public void setState(Integer state) {
-        this.state = state;
     }
 }

@@ -5,17 +5,24 @@ import java.util.Date;
 public class LoanOrder {
     private Long id;
 
-    private Long userid;
+    private Integer userid;
 
-    private Long loadid;
+    private Integer loadid;
 
     private Double money;
 
     private Double totalInterest;
 
     private Date createTime;
+    private Integer status;
 
-    private Integer state;
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
 
     public Long getId() {
         return id;
@@ -25,19 +32,19 @@ public class LoanOrder {
         this.id = id;
     }
 
-    public Long getUserid() {
+    public Integer getUserid() {
         return userid;
     }
 
-    public void setUserid(Long userid) {
+    public void setUserid(Integer userid) {
         this.userid = userid;
     }
 
-    public Long getLoadid() {
+    public Integer getLoadid() {
         return loadid;
     }
 
-    public void setLoadid(Long loadid) {
+    public void setLoadid(Integer loadid) {
         this.loadid = loadid;
     }
 
@@ -63,13 +70,5 @@ public class LoanOrder {
 
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
-    }
-
-    public Integer getState() {
-        return state;
-    }
-
-    public void setState(Integer state) {
-        this.state = state;
     }
 }

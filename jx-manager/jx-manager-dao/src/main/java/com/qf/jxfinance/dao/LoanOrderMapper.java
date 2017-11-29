@@ -10,7 +10,7 @@ public interface LoanOrderMapper {
 
     int deleteByExample(LoanOrderExample example);
 
-    int deleteByPrimaryKey(Long id);
+    int deleteByPrimaryKey(Integer id);
 
     int insert(LoanOrder record);
 
@@ -18,7 +18,7 @@ public interface LoanOrderMapper {
 
     List<LoanOrder> selectByExample(LoanOrderExample example);
 
-    LoanOrder selectByPrimaryKey(Long id);
+    LoanOrder selectByPrimaryKey(Integer id);
 
     int updateByExampleSelective(@Param("record") LoanOrder record, @Param("example") LoanOrderExample example);
 

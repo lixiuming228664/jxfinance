@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qf.jxfinance.dao.LoanCustomMapper">
+
+  <sql id="Base_Column_List">
+    id,loan_time as loanTime,repayment,interest_rate as interestRate
+  </sql>
+
+  <select id="listLoanByPage" resultType="com.qf.jxfinance.pojo.po.Loan">
+    select
+    <include refid="Base_Column_List"/>
+    from loan where status !=2 limit #{page.offset},#{page.rows}
+  </select>
+
+  <select id="countLoan" resultType="_long">
+    select count(1)
+    from loan  where status !=2
+  </select>
+
+</mapper>

@@ -1,5 +1,7 @@
 package com.qf.jxfinance.pojo.po;
 
+import java.util.Date;
+
 public class User {
     private Long id;
 
@@ -16,18 +18,22 @@ public class User {
     private Integer phone;
 
     private String address;
-
+    //身份证号
     private String idCard;
-
+    //银行卡号1
     private String bankCard1;
-
+    //银行卡号1
     private String bankCard2;
 
     private String image;
-
+    // 1.管理员 2.普通用户 3.vip
     private Integer level;
-
+    //1.正常 2.禁用 3.删除
     private Integer state;
+
+    private Date created;
+
+    private Date updated;
 
     public Long getId() {
         return id;
@@ -139,5 +145,21 @@ public class User {
 
     public void setState(Integer state) {
         this.state = state;
+    }
+
+    public Date getCreated() {
+        return created;
+    }
+
+    public void setCreated(Date created) {
+        this.created = created;
+    }
+
+    public Date getUpdated() {
+        return updated;
+    }
+
+    public void setUpdated(Date updated) {
+        this.updated = updated;
     }
 }
