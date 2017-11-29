@@ -2,6 +2,7 @@ package com.qf.jxfinance.dao;
 
 import com.qf.jxfinance.common.dto.Page;
 import com.qf.jxfinance.pojo.po.User;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -17,5 +18,5 @@ public interface UserCustomMapper {
      * @param page
      * @return
      */
-    List<User> listUser(Page page);
+    List<User> listUser(@Param("page") Page page);
 }
