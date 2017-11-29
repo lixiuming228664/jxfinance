@@ -304,52 +304,52 @@ public class InsuranceProductExample {
             return (Criteria) this;
         }
 
-        public Criteria andCatEqualTo(Boolean value) {
+        public Criteria andCatEqualTo(Integer value) {
             addCriterion("cat =", value, "cat");
             return (Criteria) this;
         }
 
-        public Criteria andCatNotEqualTo(Boolean value) {
+        public Criteria andCatNotEqualTo(Integer value) {
             addCriterion("cat <>", value, "cat");
             return (Criteria) this;
         }
 
-        public Criteria andCatGreaterThan(Boolean value) {
+        public Criteria andCatGreaterThan(Integer value) {
             addCriterion("cat >", value, "cat");
             return (Criteria) this;
         }
 
-        public Criteria andCatGreaterThanOrEqualTo(Boolean value) {
+        public Criteria andCatGreaterThanOrEqualTo(Integer value) {
             addCriterion("cat >=", value, "cat");
             return (Criteria) this;
         }
 
-        public Criteria andCatLessThan(Boolean value) {
+        public Criteria andCatLessThan(Integer value) {
             addCriterion("cat <", value, "cat");
             return (Criteria) this;
         }
 
-        public Criteria andCatLessThanOrEqualTo(Boolean value) {
+        public Criteria andCatLessThanOrEqualTo(Integer value) {
             addCriterion("cat <=", value, "cat");
             return (Criteria) this;
         }
 
-        public Criteria andCatIn(List<Boolean> values) {
+        public Criteria andCatIn(List<Integer> values) {
             addCriterion("cat in", values, "cat");
             return (Criteria) this;
         }
 
-        public Criteria andCatNotIn(List<Boolean> values) {
+        public Criteria andCatNotIn(List<Integer> values) {
             addCriterion("cat not in", values, "cat");
             return (Criteria) this;
         }
 
-        public Criteria andCatBetween(Boolean value1, Boolean value2) {
+        public Criteria andCatBetween(Integer value1, Integer value2) {
             addCriterion("cat between", value1, value2, "cat");
             return (Criteria) this;
         }
 
-        public Criteria andCatNotBetween(Boolean value1, Boolean value2) {
+        public Criteria andCatNotBetween(Integer value1, Integer value2) {
             addCriterion("cat not between", value1, value2, "cat");
             return (Criteria) this;
         }
