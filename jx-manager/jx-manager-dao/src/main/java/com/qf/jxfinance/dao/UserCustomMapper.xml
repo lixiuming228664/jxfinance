@@ -11,20 +11,53 @@
         id_card AS idCard,
         bank_card_1 AS bankCard1,
         bank_card_2 AS bankCard2,
-        image, 'level', state
+        image, `level`,
+        state,
+        updated,
+        created
     </sql>
 
-    <select id="countUser">
-        select
-        <include refid="Base_Column_List"></include>
+    <!--会员查询的条件从句-->
+    <sql id="User_Where_Clause">
+        <where>
+            state != 3 and level != 1
+            <if test="query != null and query.userName != null and query.userName != '' ">
+                and user_name like '%${query.userName}%'
+            </if>
+            <if test="query != null and query.state != null and query.state != 0">
+                and state = #{query.state}
+            </if>
+            <if test="query != null and query.level != null and query.level != 0">
+                and level = #{query.level}
+            </if>
+        </where>
+    </sql>
 
 
+    <!--查询符合条件的总数-->
+    <select id="countUser" resultType="_long">
+        select count(1) from user
+        <include refid="User_Where_Clause"></include>
     </select>
 
-
-    <select id="listUser">
-
-
+    <!--查询符合条件的一页的数据-->
+    <select id="listUser" resultType="com.qf.jxfinance.pojo.vo.UserCustom">
+        select
+        <include refid="Base_Column_List"></include>
+        from user
+        <include refid="User_Where_Clause"></include>
+        /*排序*/
+        <choose>
+            <when test="orderdto != null and orderdto.sort != null and orderdto.order != null" >
+                <foreach collection="orderdto.orderParams" item="user" open="ORDER BY " close=" " separator=",">
+                    ${user}
+                </foreach>
+            </when>
+            <otherwise>
+                ORDER BY  `id` ASC
+            </otherwise>
+        </choose>
+        limit #{page.offset},#{page.rows}
     </select>
 
 </mapper>
