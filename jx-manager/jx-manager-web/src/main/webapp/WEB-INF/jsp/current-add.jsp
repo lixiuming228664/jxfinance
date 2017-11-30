@@ -121,6 +121,7 @@
             success:function (data) {
                 $.messager.alert('消息','保存成功','info');
                 ttshop.closeTabs('新增活期理财产品');
+                ttshop.closeTabs('查询活期理财产品');
                 ttshop.addTabs('查询活期理财产品','current-list');
                 $('#dgCurrents').datagrid('reload');
 

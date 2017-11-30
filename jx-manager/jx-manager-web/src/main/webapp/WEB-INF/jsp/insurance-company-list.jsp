@@ -65,7 +65,8 @@
 	});
 
 	function add() {
-		console.log('add');
+		ttshop.closeTabs("新增保险公司");
+		ttshop.addTabs("新增保险公司","insurance-company-add");
 	}
 
 	function edit() {

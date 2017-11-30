@@ -42,9 +42,12 @@
             success: function (data) {
                 if (data > 0) {
                     $.messager.alert('消息', '保存成功', 'info');
+                    ttshop.closeTabs('查询贷款产品', 'loan-list');
+                    ttshop.closeTabs('新增贷款产品', 'loan-add');
                     ttshop.addTabs('查询贷款产品', 'loan-list');
+
                 }else{
-                    alert("ca");
+                    $.messager.alert('警告', '保存失败', 'warning');
                 }
             }
         });

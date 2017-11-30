@@ -16,7 +16,7 @@
     <h2>金溪金融后台管理系统</h2>
 </div>
 <div data-options="region:'south'" style="padding:5px;background:#eee;">
-    系统版本：V0.01
+    系统版本：V1.01
 </div>
 <div data-options="region:'west'" style="width:200px;">
     <div id="menu" class="easyui-accordion">
@@ -64,7 +64,7 @@
 <div data-options="region:'center'" style="background:#eee;">
     <div id="tab" class="easyui-tabs" data-options="fit:true">
         <div title="欢迎页面" style="padding:20px;text-align: center;">
-            <h3>欢迎登录牛X牛X金溪后台管理</h3>
+            <h3>欢迎登录金溪金融后台管理</h3>
         </div>
     </div>
 </div>

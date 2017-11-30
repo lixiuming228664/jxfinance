@@ -68,7 +68,8 @@
 	});
 
 	function add() {
-		console.log('add');
+		ttshop.closeTabs("新增保险产品");
+		ttshop.addTabs("新增保险产品","insurance-product-add");
 	}
 
 	function edit() {
