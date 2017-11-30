@@ -50,9 +50,10 @@
         }
         $.messager.confirm('确认', '您确认想要编辑记录吗？', function (r) {
             if (r) {
-
-                ttshop.addTabs('编辑理财公司','fixedtime-edit');
-                //window.location.href="fixedtime-edit?selections=selections";
+                var fcid=selections[0].id;
+                console.log(fcid);
+                ttshop.closeTabs('理财公司');
+                ttshop.addTabs('编辑理财公司','fcfctime?fcid='+fcid);
             }
         });
     }

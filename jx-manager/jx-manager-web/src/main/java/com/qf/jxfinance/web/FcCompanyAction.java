@@ -3,6 +3,7 @@ package com.qf.jxfinance.web;
 import com.qf.jxfinance.common.dto.Page;
 import com.qf.jxfinance.common.dto.Result;
 import com.qf.jxfinance.pojo.po.FcCompany;
+import com.qf.jxfinance.pojo.po.Fixedtime;
 import com.qf.jxfinance.pojo.vo.FcCompanyQuery;
 import com.qf.jxfinance.service.FcCompanyService;
 import org.slf4j.Logger;
@@ -10,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -82,5 +84,31 @@ public class FcCompanyAction {
             }
             return i;
         }
+
+    @RequestMapping("fcfctime")
+    public String findByFCId(@RequestParam("fcid") long fcid,Model model) {
+        System.out.println(fcid+"66666");
+        FcCompany fcCompany=null;
+        try {
+            fcCompany = fcCompanyService.findByFCid(fcid);
+        } catch (Exception e) {
+            logger.error(e.getMessage(), e);
+            e.printStackTrace();
+        }
+        model.addAttribute("fcCompany",fcCompany);
+        return "fc-company-edit";
+    }
+    @ResponseBody
+    @RequestMapping("/itemfcupdate")
+    public int itemfcupdate(FcCompany fcCompany) {
+        int i = 0;
+        try {
+            i = fcCompanyService.itemfcupdate(fcCompany);
+        } catch (Exception e) {
+            logger.error(e.getMessage(), e);
+            e.printStackTrace();
+        }
+        return i;
+    }
 
     }

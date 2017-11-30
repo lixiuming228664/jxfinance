@@ -125,4 +125,32 @@ public class FcCompanyServiceImpl implements FcCompanyService {
         }
         return i;
     }
+
+    @Override
+    public FcCompany findByFCid(long fcid) {
+        FcCompany fcCompany=null;
+        try{
+            FcCompanyExample example = new FcCompanyExample();
+            FcCompanyExample.Criteria criteria = example.createCriteria();
+            criteria.andIdEqualTo(fcid);
+            List<FcCompany> fcCompanies = fcCompanyMapper.selectByExample(example);
+            fcCompany=fcCompanies.get(0);
+        }catch(Exception e){
+            logger.error(e.getMessage(),e);
+            e.printStackTrace();
+        }
+        return fcCompany;
+    }
+
+    @Override
+    public int itemfcupdate(FcCompany fcCompany) {
+        int i = 0;
+        try {
+            i = fcCompanyMapper.updateByPrimaryKeyWithBLOBs(fcCompany);
+        } catch (Exception e) {
+            logger.error(e.getMessage(), e);
+            e.printStackTrace();
+        }
+        return i;
+    }
 }
