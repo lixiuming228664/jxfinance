@@ -7,7 +7,7 @@ public class InsuranceProduct {
 
     private String name;
 
-    private Boolean cat;
+    private Integer cat;
 
     private Integer duration;
 
@@ -43,11 +43,11 @@ public class InsuranceProduct {
         this.name = name == null ? null : name.trim();
     }
 
-    public Boolean getCat() {
+    public Integer getCat() {
         return cat;
     }
 
-    public void setCat(Boolean cat) {
+    public void setCat(Integer cat) {
         this.cat = cat;
     }
 

@@ -5,7 +5,7 @@
     <id column="id" property="id" jdbcType="BIGINT" />
     <result column="company_id" property="companyId" jdbcType="BIGINT" />
     <result column="name" property="name" jdbcType="VARCHAR" />
-    <result column="cat" property="cat" jdbcType="BIT" />
+    <result column="cat" property="cat" jdbcType="INTEGER" />
     <result column="duration" property="duration" jdbcType="INTEGER" />
     <result column="coverage" property="coverage" jdbcType="BIGINT" />
     <result column="premium" property="premium" jdbcType="INTEGER" />
@@ -132,7 +132,7 @@
       premium, state, message
       )
     values (#{id,jdbcType=BIGINT}, #{companyId,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, 
-      #{cat,jdbcType=BIT}, #{duration,jdbcType=INTEGER}, #{coverage,jdbcType=BIGINT}, 
+      #{cat,jdbcType=INTEGER}, #{duration,jdbcType=INTEGER}, #{coverage,jdbcType=BIGINT}, 
       #{premium,jdbcType=INTEGER}, #{state,jdbcType=INTEGER}, #{message,jdbcType=LONGVARCHAR}
       )
   </insert>
@@ -178,7 +178,7 @@
         #{name,jdbcType=VARCHAR},
       </if>
       <if test="cat != null" >
-        #{cat,jdbcType=BIT},
+        #{cat,jdbcType=INTEGER},
       </if>
       <if test="duration != null" >
         #{duration,jdbcType=INTEGER},
@@ -216,7 +216,7 @@
         name = #{record.name,jdbcType=VARCHAR},
       </if>
       <if test="record.cat != null" >
-        cat = #{record.cat,jdbcType=BIT},
+        cat = #{record.cat,jdbcType=INTEGER},
       </if>
       <if test="record.duration != null" >
         duration = #{record.duration,jdbcType=INTEGER},
@@ -243,7 +243,7 @@
     set id = #{record.id,jdbcType=BIGINT},
       company_id = #{record.companyId,jdbcType=BIGINT},
       name = #{record.name,jdbcType=VARCHAR},
-      cat = #{record.cat,jdbcType=BIT},
+      cat = #{record.cat,jdbcType=INTEGER},
       duration = #{record.duration,jdbcType=INTEGER},
       coverage = #{record.coverage,jdbcType=BIGINT},
       premium = #{record.premium,jdbcType=INTEGER},
@@ -258,7 +258,7 @@
     set id = #{record.id,jdbcType=BIGINT},
       company_id = #{record.companyId,jdbcType=BIGINT},
       name = #{record.name,jdbcType=VARCHAR},
-      cat = #{record.cat,jdbcType=BIT},
+      cat = #{record.cat,jdbcType=INTEGER},
       duration = #{record.duration,jdbcType=INTEGER},
       coverage = #{record.coverage,jdbcType=BIGINT},
       premium = #{record.premium,jdbcType=INTEGER},
@@ -277,7 +277,7 @@
         name = #{name,jdbcType=VARCHAR},
       </if>
       <if test="cat != null" >
-        cat = #{cat,jdbcType=BIT},
+        cat = #{cat,jdbcType=INTEGER},
       </if>
       <if test="duration != null" >
         duration = #{duration,jdbcType=INTEGER},
@@ -301,7 +301,7 @@
     update insurance_product
     set company_id = #{companyId,jdbcType=BIGINT},
       name = #{name,jdbcType=VARCHAR},
-      cat = #{cat,jdbcType=BIT},
+      cat = #{cat,jdbcType=INTEGER},
       duration = #{duration,jdbcType=INTEGER},
       coverage = #{coverage,jdbcType=BIGINT},
       premium = #{premium,jdbcType=INTEGER},
@@ -313,7 +313,7 @@
     update insurance_product
     set company_id = #{companyId,jdbcType=BIGINT},
       name = #{name,jdbcType=VARCHAR},
-      cat = #{cat,jdbcType=BIT},
+      cat = #{cat,jdbcType=INTEGER},
       duration = #{duration,jdbcType=INTEGER},
       coverage = #{coverage,jdbcType=BIGINT},
       premium = #{premium,jdbcType=INTEGER},
