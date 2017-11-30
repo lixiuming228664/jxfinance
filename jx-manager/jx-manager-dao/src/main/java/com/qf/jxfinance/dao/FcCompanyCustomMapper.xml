@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qf.jxfinance.dao.FcCompanyCustomMapper" >
+  <sql id="Base_Column_List">
+    id,company_name as companyName,address,
+    link,telephone,state,message
+  </sql>
+  <sql id="Where_Clause" >
+    <where>
+      state!=3
+      <if test="query != null and query.companyName != null and query.companyName != '' ">
+        and company_name like '%${query.companyName}%'
+      </if>
+      <if test="query != null and query.state != null and query.state != 0 ">
+        and state = #{query.state}
+      </if>
+    </where>
+  </sql>
+  <select id="countItemsfc" resultType="_long">
+    select count(1)
+    from fc_company
+    <include refid="Where_Clause" />
+  </select>
+  <select id="listItemByPagefc"  resultType="com.qf.jxfinance.pojo.po.FcCompany">
+  SELECT
+  <include refid="Base_Column_List" />
+  FROM fc_company
+    <include refid="Where_Clause" />
+    order by id desc
+  LIMIT #{page.offset},#{page.rows}
+  </select>
+</mapper>

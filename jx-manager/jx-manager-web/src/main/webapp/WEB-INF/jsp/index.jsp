@@ -45,10 +45,10 @@
         </div>
         <div title="定期理财产品管理" data-options="iconCls:'icon-tip'" style="padding:10px 0;">
             <ul class="easyui-tree">
-                <li data-options="attributes:{'href':'fixedtime-add'}">新增定期理财产品</li>
-                <li data-options="attributes:{'href':'fixedtime-list'}">查询定期理财产品</li>
-                <li data-options="attributes:{'href':'fc-company-add'}">新增理财公司</li>
-                <li data-options="attributes:{'href':'fc-company-list'}">查询理财公司</li>
+                <li data-options="attributes:{'href':'fixedtime-list'}">定期理财产品</li>
+                <%--<li data-options="attributes:{'href':'fixedtime-list'}">查询定期理财产品</li>--%>
+                <li data-options="attributes:{'href':'fc-company-list'}">理财公司</li>
+                <%--<li data-options="attributes:{'href':'fc-company-list'}">查询理财公司</li>--%>
             </ul>
         </div>
         <div title="贷款管理" data-options="iconCls:'icon-tip'" style="padding:10px 0;">
@@ -79,7 +79,7 @@
 <script src="js/ueditor/ueditor.config.js"></script>
 <script src="js/ueditor/ueditor.all.js"></script>
 <script>
-    ttshop.onTreeClick();
+    ttshop.registerMenuEvent();
 </script>
 <script>
     moment.locale("zh-cn");
