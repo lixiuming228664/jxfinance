@@ -135,4 +135,16 @@ public class FixedtimeServiceImpl implements FixedtimeService {
         }
         return fixedtime;
     }
+
+    @Override
+    public int updateFixtime(Fixedtime fixedtime) {
+        int i = 0;
+        try {
+            i = fixedtimeMapper.updateByPrimaryKeyWithBLOBs(fixedtime);
+        } catch (Exception e) {
+            logger.error(e.getMessage(), e);
+            e.printStackTrace();
+        }
+        return i;
+    }
 }

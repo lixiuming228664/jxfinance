@@ -52,7 +52,8 @@
             if (r) {
                var ftid=selections[0].id;
                console.log(ftid);
-                ttshop.addTabs('编辑理财产品','fixedtime-edit?ftid'+ftid);
+                ttshop.closeTabs('定期理财产品');
+                ttshop.addTabs('编辑理财产品','ftfixtime?ftid='+ftid);
             }
         });
     }

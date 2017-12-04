@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8"
 		 pageEncoding="UTF-8" %>
 <%--容器放好--%>
-<table id="dgProducts"></table>
+<table id="dgProducts" style="border: hidden"></table>
 
 <%--工具栏div--%>
 <div id="toolbar">
