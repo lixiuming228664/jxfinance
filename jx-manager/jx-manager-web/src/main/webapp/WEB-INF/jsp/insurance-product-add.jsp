@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8"
 		 pageEncoding="UTF-8" %>
 
-<div class="easyui-panel" title="商品详情" data-options="fit:true">
+<div class="easyui-panel" title="产品详情" data-options="fit:true">
 	<form class="itemForm" id="itemAddForm" name="itemAddForm" method="post">
 		<div style="margin: 0 auto;text-align: center">
 			<div>
@@ -60,7 +60,11 @@
 </div>
 
 <script>
-	var ue = UE.getEditor('container');
+	var ue = UE.getEditor('container',{
+		initialFrameWidth: '100%',
+		initialFrameHeight: '300',
+		serverUrl: 'file/upload'
+	});
 
 	//表单提交动作
 	function submitForm() {
