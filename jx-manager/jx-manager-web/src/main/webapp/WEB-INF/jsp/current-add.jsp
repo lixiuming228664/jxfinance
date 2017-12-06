@@ -100,8 +100,14 @@
 </div>
 <script>
 
+
     //初始化富文本编辑器
-    var ue = UE.getEditor('container');
+    var ue = UE.getEditor('container', {
+        initialFrameWidth: 1000,
+        initialFrameHeight: 300,
+        serverUrl: 'file/upload'
+    });
+
     //表单提交动作
     function submitForm() {
         $('#currentAddForm').form('submit',{

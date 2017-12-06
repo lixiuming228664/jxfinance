@@ -9,6 +9,8 @@
     <file url="file://$PROJECT_DIR$/jx-manager/jx-manager-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jx-manager/jx-manager-web" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jx-parent" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jx-portal-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jx-upload" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

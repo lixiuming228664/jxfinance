@@ -11,6 +11,8 @@
     <modules>
         <module>../jx-manager</module>
         <module>../jx-common</module>
+        <module>../jx-upload</module>
+        <module>../jx-portal-web</module>
     </modules>
     <!--分布式工程需要使用依赖的版本号，统一管理-->
     <properties>

@@ -22,21 +22,8 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
-    <!--4 文件上传解析器-->
-    <!--文件上传依赖jar，pom文件添加依赖-->
-    <bean id="multipartResolver"
-          class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-        <property name="defaultEncoding">
-            <value>UTF-8</value>
-        </property>
-        <property name="maxUploadSize">
-            <!-- 10M -->
-            <value>10485760</value>
-        </property>
-        <property name="maxInMemorySize">
-            <value>4096</value>
-        </property>
-    </bean>
+
+
 
     <!--5 静态资源解析（静态资源放行）-->
     <!--比如：http://localhost:8080/ttshop/js/xxx/test.jsp 放行：不经过action，直接访问静态资源-->
@@ -48,6 +35,19 @@
     <mvc:resources mapping="/images/**" location="/images/"/>
     <!--存放百度富文本编辑器的目录-->
     <mvc:resources mapping="/ueditor/**" location="/ueditor/"/>
-
-
+    <!--4 文件上传解析器-->
+    <!--文件上传依赖jar，pom文件添加依赖-->
+    <!--文件上传解析器-->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding">
+            <value>UTF-8</value>
+        </property>
+        <property name="maxUploadSize">
+            <!-- 10M -->
+            <value>10485760</value>
+        </property>
+        <property name="maxInMemorySize">
+            <value>4096</value>
+        </property>
+    </bean>
 </beans>
