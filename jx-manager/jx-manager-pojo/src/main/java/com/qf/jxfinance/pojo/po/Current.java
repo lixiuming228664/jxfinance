@@ -27,6 +27,8 @@ public class Current {
 
     private Integer state;
 
+    private String url;
+
     private String message;
 
     public Long getId() {
@@ -123,6 +125,14 @@ public class Current {
 
     public void setState(Integer state) {
         this.state = state;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url == null ? null : url.trim();
     }
 
     public String getMessage() {
