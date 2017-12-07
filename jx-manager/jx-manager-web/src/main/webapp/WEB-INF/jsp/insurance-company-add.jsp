@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8"
 		 pageEncoding="UTF-8" %>
-<div class="easyui-panel" title="商品详情" data-options="fit:true">
+<div class="easyui-panel" title="公司详情" data-options="fit:true">
 	<form class="itemForm" id="itemAddForm" name="itemAddForm" method="post">
 		<div>
 			<td class="label">产品名称:</td>
@@ -16,12 +16,18 @@
 
 		<div>
 			<td class="label">公司地址:</td>
-			<input class="easyui-textbox" type="text" id="adress" name="address"
+			<input class="easyui-textbox" type="text" id="address" name="address"
 				   data-options="required:true,validType:'length[0,255]'" style="width:100%">
 		</div><br/>
 
 		<div>
-			<script id="container" name="message" type="text/plain">公司描述</script>
+			<td class="label">公司描述:</td>
+			<input class="easyui-textbox" type="text" id="message" name="message"
+				   data-options="required:true,validType:'length[0,255]'" style="width:100%">
+		</div><br/>
+
+		<div>
+			<script id="container" name="picPath" type="text/plain">公司图片:</script>
 		</div><br/>
 
 		<div>
@@ -37,7 +43,11 @@
 </div>
 
 <script>
-	var ue = UE.getEditor('container');
+	var ue = UE.getEditor('container',{
+		initialFrameWidth: '100%',
+		initialFrameHeight: '300',
+		serverUrl: 'file/upload'
+	});
 
 	//表单提交动作
 	function submitForm() {

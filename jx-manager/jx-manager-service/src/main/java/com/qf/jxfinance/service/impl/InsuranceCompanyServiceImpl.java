@@ -36,6 +36,10 @@ public class InsuranceCompanyServiceImpl implements InsuranceCompanyService {
 		int result = 0;
 		try {
 			insuranceCompany.setId(IDUtils.getItemId());
+
+			String[] arrays = insuranceCompany.getPicPath().split("\"");
+			insuranceCompany.setPicPath(arrays[arrays.length-6]);
+
 			insuranceCompany.setState(1);
 			result += icDao.insertSelective(insuranceCompany);
 		} catch (Exception e) {

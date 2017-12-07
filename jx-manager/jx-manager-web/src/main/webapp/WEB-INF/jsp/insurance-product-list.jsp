@@ -62,7 +62,7 @@
 			{field: 'duration',title: '期限(月)',width: 70,align: 'right',sortable: true},
 			{field: 'coverageView',title: '保额',width: 70,align: 'right',sortable: true},
 			{field: 'premiumView',title: '保费',fit: true,align: 'center',sortable: true},
-			{field: 'message',title: '更多信息',fit: true,align: 'center',sortable: true},
+			// {field: 'message',title: '更多信息',fit: true,align: 'center',sortable: true},
 			{field: 'stateView',title: '状态',fit: true,align: 'center',sortable: true}
 		]]
 	});

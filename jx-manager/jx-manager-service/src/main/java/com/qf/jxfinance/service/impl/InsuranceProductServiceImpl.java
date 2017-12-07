@@ -36,6 +36,10 @@ public class InsuranceProductServiceImpl implements InsuranceProductService {
 		int result = 0;
 		try {
 			insuranceProduct.setId(IDUtils.getItemId());
+
+			String[] messages = insuranceProduct.getMessage().split("\"");
+			insuranceProduct.setMessage(messages[messages.length-6]);
+
 			insuranceProduct.setState(1);
 			result += ipDao.insertSelective(insuranceProduct);
 		} catch (Exception e) {
