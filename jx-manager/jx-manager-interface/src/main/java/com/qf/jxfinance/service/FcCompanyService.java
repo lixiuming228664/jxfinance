@@ -17,4 +17,8 @@ public interface FcCompanyService {
     int downBatch(List<Long> ids);
 
     int upBatch(List<Long> ids);
+
+    FcCompany findByFCid(long fcid);
+
+    int itemfcupdate(FcCompany fcCompany);
 }

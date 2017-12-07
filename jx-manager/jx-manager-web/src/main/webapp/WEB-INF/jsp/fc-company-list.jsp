@@ -5,7 +5,7 @@
         <label>公司名称：</label>
         <input class="easyui-textbox" type="text" id="companyName">
         <label>公司状态：</label>
-        <select id="state" class="easyui-combobox">
+        <select id="state" class="easyui-combobox" data-options="editable:false,panelHeight:'auto'">
             <option value="0">全部</option>
             <option value="1">正常</option>
             <option value="2">下架</option>
@@ -50,9 +50,10 @@
         }
         $.messager.confirm('确认', '您确认想要编辑记录吗？', function (r) {
             if (r) {
-
-                ttshop.addTabs('编辑理财公司','fixedtime-edit');
-                //window.location.href="fixedtime-edit?selections=selections";
+                var fcid=selections[0].id;
+                console.log(fcid);
+                ttshop.closeTabs('理财公司');
+                ttshop.addTabs('编辑理财公司','fcfctime?fcid='+fcid);
             }
         });
     }
@@ -190,4 +191,5 @@
             }
         ]]
     });
+
 </script>

@@ -20,4 +20,6 @@ public interface FixedtimeService {
     int upBatch(List<Long> ids);
 
     Fixedtime findById(Long ftid);
+
+    int updateFixtime(Fixedtime fixedtime);
 }

@@ -12,6 +12,7 @@
         <module name="jx-manager-pojo" />
         <module name="jx-manager-service" />
         <module name="jx-manager-web" />
+        <module name="jx-portal-web" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.7">
@@ -23,6 +24,8 @@
       <module name="jx-manager-service" target="1.7" />
       <module name="jx-manager-web" target="1.7" />
       <module name="jx-parent" target="1.7" />
+      <module name="jx-portal-web" target="1.7" />
+      <module name="jx-upload" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

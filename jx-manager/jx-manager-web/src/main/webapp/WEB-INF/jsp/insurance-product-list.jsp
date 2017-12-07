@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8"
 		 pageEncoding="UTF-8" %>
 <%--容器放好--%>
-<table id="dgProducts"></table>
+<table id="dgProducts" style="border: hidden"></table>
 
 <%--工具栏div--%>
 <div id="toolbar">
@@ -62,13 +62,14 @@
 			{field: 'duration',title: '期限(月)',width: 70,align: 'right',sortable: true},
 			{field: 'coverageView',title: '保额',width: 70,align: 'right',sortable: true},
 			{field: 'premiumView',title: '保费',fit: true,align: 'center',sortable: true},
-			{field: 'message',title: '更多信息',fit: true,align: 'center',sortable: true},
+			// {field: 'message',title: '更多信息',fit: true,align: 'center',sortable: true},
 			{field: 'stateView',title: '状态',fit: true,align: 'center',sortable: true}
 		]]
 	});
 
 	function add() {
-		console.log('add');
+		ttshop.closeTabs("新增保险产品");
+		ttshop.addTabs("新增保险产品","insurance-product-add");
 	}
 
 	function edit() {

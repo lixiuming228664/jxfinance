@@ -82,6 +82,7 @@ public class CurrentAction {
         int i = 0;
         try {
             i = currentService.saveCurrent(current, content);
+
         } catch (Exception e) {
             logger.error(e.getMessage(), e);
             e.printStackTrace();

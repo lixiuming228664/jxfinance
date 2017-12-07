@@ -3,7 +3,6 @@ package com.qf.jxfinance.web;
 import com.qf.jxfinance.common.dto.Order;
 import com.qf.jxfinance.common.dto.Page;
 import com.qf.jxfinance.common.dto.Result;
-import com.qf.jxfinance.pojo.po.User;
 import com.qf.jxfinance.pojo.vo.UserCustom;
 import com.qf.jxfinance.pojo.vo.UserQuery;
 import com.qf.jxfinance.service.UserService;
@@ -43,6 +42,7 @@ public class UserAction {
         }catch (Exception e){
             logger.error(e.getMessage(),e);
         }
+
         return result;
     }
 

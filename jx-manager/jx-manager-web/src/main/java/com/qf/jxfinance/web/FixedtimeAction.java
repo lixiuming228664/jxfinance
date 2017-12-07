@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -88,9 +89,9 @@ public class FixedtimeAction {
         return i;
     }
 
-    @ResponseBody
-    @RequestMapping("/items/fixtime")
-    public Fixedtime findById(@RequestParam("ftid") Long ftid) {
+    @RequestMapping("ftfixtime")
+    public String findById(@RequestParam("ftid") long ftid,Model model) {
+        System.out.println(ftid+"66666");
         Fixedtime fixedtime = null;
         try {
             fixedtime = fixedtimeService.findById(ftid);
@@ -98,7 +99,20 @@ public class FixedtimeAction {
             logger.error(e.getMessage(), e);
             e.printStackTrace();
         }
-        return fixedtime;
+        model.addAttribute("fixedtime",fixedtime);
+        return "fixedtime-edit";
+    }
+    @ResponseBody
+    @RequestMapping("/itemupdate")
+    public int updateFixedtime(Fixedtime fixedtime) {
+        int i = 0;
+        try {
+            i = fixedtimeService.updateFixtime(fixedtime);
+        } catch (Exception e) {
+            logger.error(e.getMessage(), e);
+            e.printStackTrace();
+        }
+        return i;
     }
 
 }

@@ -5,7 +5,7 @@
         <label>理财产品名称：</label>
         <input class="easyui-textbox" type="text" id="title">
         <label>产品状态：</label>
-        <select id="state" class="easyui-combobox">
+        <select id="state" class="easyui-combobox" data-options="editable:false,panelHeight:'auto'">
             <option value="0">全部</option>
             <option value="1">正常</option>
             <option value="2">下架</option>
@@ -52,7 +52,8 @@
             if (r) {
                var ftid=selections[0].id;
                console.log(ftid);
-                ttshop.addTabs('编辑理财产品','fixedtime-edit?ftid'+ftid);
+                ttshop.closeTabs('定期理财产品');
+                ttshop.addTabs('编辑理财产品','ftfixtime?ftid='+ftid);
             }
         });
     }
@@ -191,4 +192,5 @@
             }
         ]]
     });
+
 </script>

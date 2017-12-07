@@ -100,8 +100,14 @@
 </div>
 <script>
 
+
     //初始化富文本编辑器
-    var ue = UE.getEditor('container');
+    var ue = UE.getEditor('container', {
+        initialFrameWidth: 1000,
+        initialFrameHeight: 300,
+        serverUrl: 'file/upload'
+    });
+
     //表单提交动作
     function submitForm() {
         $('#currentAddForm').form('submit',{
@@ -121,6 +127,7 @@
             success:function (data) {
                 $.messager.alert('消息','保存成功','info');
                 ttshop.closeTabs('新增活期理财产品');
+                ttshop.closeTabs('查询活期理财产品');
                 ttshop.addTabs('查询活期理财产品','current-list');
                 $('#dgCurrents').datagrid('reload');
 
