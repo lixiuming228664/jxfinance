@@ -7,7 +7,6 @@ import static org.junit.Assert.*;
 
 public class MessageUtilTest {
 
-    @Test
     public void testSendckCode() throws Exception {
 
         int ckCode = (int) ((Math.random() * 9 + 1) * 100000);

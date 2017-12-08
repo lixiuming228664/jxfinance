@@ -8,7 +8,7 @@
                 http://www.springframework.org/schema/context
                 http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
     <!--1 扫描web层下的注解类-->
-    <context:component-scan base-package="com.qf.jxfinance.web"/>
+    <context:component-scan base-package="com.qf.jxfinance.portal.web"/>
     <!--2 mvc的注解驱动-->
     <!--@RequestMapping @ResponseBody @RequestParam jackson Object转成json-->
     <mvc:annotation-driven/>
@@ -47,7 +47,7 @@
     <!--图片文件-->
     <mvc:resources mapping="/images/**" location="/images/"/>
     <!--存放百度富文本编辑器的目录-->
-    <mvc:resources mapping="/ueditor/**" location="/ueditor/"/>
+   <!-- <mvc:resources mapping="/ueditor/**" location="/ueditor/"/>-->
 
 
 </beans>
