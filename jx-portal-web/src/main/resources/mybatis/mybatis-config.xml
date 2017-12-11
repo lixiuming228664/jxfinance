@@ -6,6 +6,6 @@
 <configuration>
     <!--mybatis的全局属性，用于扩展-->
     <!--<settings>-->
-        <!--<setting name="mapUnderscoreToCamelCase" value="true"/>-->
+    <!--<setting name="mapUnderscoreToCamelCase" value="true"/>-->
     <!--</settings>-->
 </configuration>
