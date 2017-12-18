@@ -1,5 +1,6 @@
 package com.qf.jxfinance.service.impl;
 
+<<<<<<< Updated upstream
 import com.qf.jxfinance.common.util.StrKit;
 import com.qf.jxfinance.dao.ContentMapper;
 import com.qf.jxfinance.pojo.po.Content;
@@ -7,11 +8,20 @@ import com.qf.jxfinance.pojo.po.ContentExample;
 import com.qf.jxfinance.service.ContentService;
 import com.qf.jxfinance.common.jedis.JedisClient;
 import com.qf.jxfinance.common.util.JsonUtils;
+=======
+import com.qf.jxfinance.common.dto.Page;
+import com.qf.jxfinance.common.dto.Result;
+import com.qf.jxfinance.dao.FixedtimeCustomMapper;
+import com.qf.jxfinance.pojo.po.Fixedtime;
+import com.qf.jxfinance.pojo.vo.FixedtimeQuery;
+import com.qf.jxfinance.service.ContentService;
+>>>>>>> Stashed changes
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+<<<<<<< Updated upstream
 import java.util.List;
 
 
@@ -62,10 +72,42 @@ public class ContentServiceImpl implements ContentService {
             //存入缓存的hash中
             jedisClient.hset("CONTENT_LIST", cid + "", JsonUtils.objectToJson(contentList));
             return contentList;
+=======
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+@Service
+public class ContentServiceImpl implements ContentService {
+    private Logger logger= LoggerFactory.getLogger(this.getClass());
+    @Autowired
+    private FixedtimeCustomMapper fixedtimeCustomMapper;
+    @Override
+    public Result<Fixedtime> searchAll(Page page, FixedtimeQuery query) {
+        Result<Fixedtime> result = null;
+        try {
+            Map<String, Object> map = new HashMap<String, Object>();
+            map.put("page", page);
+            map.put("query",query);
+            result = new Result<Fixedtime>();
+            Long counts = fixedtimeCustomMapper.countItemsft(map);
+            result.setTotal(counts);
+            List<Fixedtime> list = fixedtimeCustomMapper.listItemByPageft(map);
+            result.setRows(list);
+
+>>>>>>> Stashed changes
         } catch (Exception e) {
             e.printStackTrace();
             logger.error(e.getMessage(), e);
         }
+<<<<<<< Updated upstream
         return contentList;
     }
 }
+=======
+        return result;
+    }
+}
+
+
+>>>>>>> Stashed changes

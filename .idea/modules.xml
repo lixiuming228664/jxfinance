@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/jx-parent/app-parent.iml" filepath="$PROJECT_DIR$/jx-parent/app-parent.iml" />
       <module fileurl="file://$PROJECT_DIR$/jx-common/jx-common.iml" filepath="$PROJECT_DIR$/jx-common/jx-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jx-dqlc-portal-web/jx-dqlc-portal-web.iml" filepath="$PROJECT_DIR$/jx-dqlc-portal-web/jx-dqlc-portal-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/jx-manager/jx-manager.iml" filepath="$PROJECT_DIR$/jx-manager/jx-manager.iml" />
       <module fileurl="file://$PROJECT_DIR$/jx-manager/jx-manager-dao/jx-manager-dao.iml" filepath="$PROJECT_DIR$/jx-manager/jx-manager-dao/jx-manager-dao.iml" />
       <module fileurl="file://$PROJECT_DIR$/jx-manager/jx-manager-interface/jx-manager-interface.iml" filepath="$PROJECT_DIR$/jx-manager/jx-manager-interface/jx-manager-interface.iml" />

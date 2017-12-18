@@ -49,6 +49,7 @@
                 <li data-options="attributes:{'href':'fixedtime-list'}">定期理财产品</li>
                 <%--<li data-options="attributes:{'href':'fixedtime-list'}">查询定期理财产品</li>--%>
                 <li data-options="attributes:{'href':'fc-company-list'}">理财公司</li>
+                <li data-options="attributes:{'href':'fc-company-index'}">导入索引</li>
                 <%--<li data-options="attributes:{'href':'fc-company-list'}">查询理财公司</li>--%>
             </ul>
         </div>

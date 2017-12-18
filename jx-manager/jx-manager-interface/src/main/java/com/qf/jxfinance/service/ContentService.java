@@ -1,5 +1,6 @@
 package com.qf.jxfinance.service;
 
+<<<<<<< Updated upstream
 import com.qf.jxfinance.pojo.po.Content;
 
 import java.util.List;
@@ -17,4 +18,15 @@ public interface ContentService {
      * @return
      */
     List<Content> listContentsByCid(Long cid);
+=======
+import com.qf.jxfinance.common.dto.Page;
+import com.qf.jxfinance.common.dto.Result;
+import com.qf.jxfinance.pojo.po.Fixedtime;
+import com.qf.jxfinance.pojo.vo.FixedtimeQuery;
+
+import java.util.List;
+
+public interface ContentService {
+    Result<Fixedtime> searchAll(Page page, FixedtimeQuery query);
+>>>>>>> Stashed changes
 }
