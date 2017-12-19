@@ -6,7 +6,7 @@
     <!-- Bootstrap 核心 CSS 文件 -->
     <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <!-- 引入自定义css文件 style.css -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/login-register/login-register.css" type="text/css"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/login-register.css" type="text/css"/>
 </head>
 
 <script>

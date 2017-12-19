@@ -1,8 +1,11 @@
 package com.qf.jxfinance.service.impl;
 
+import com.qf.jxfinance.common.dto.MessageResult;
 import com.qf.jxfinance.common.dto.Order;
 import com.qf.jxfinance.common.dto.Page;
 import com.qf.jxfinance.common.dto.Result;
+import com.qf.jxfinance.common.jedis.JedisClient;
+import com.qf.jxfinance.common.util.JsonUtils;
 import com.qf.jxfinance.dao.UserCustomMapper;
 import com.qf.jxfinance.dao.UserMapper;
 import com.qf.jxfinance.pojo.po.User;
@@ -15,8 +18,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jca.cci.core.RecordCreator;
 import org.springframework.stereotype.Service;
+import org.springframework.util.DigestUtils;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -26,6 +31,9 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     UserMapper userDao;
+
+    @Autowired
+    private JedisClient jedisClient;
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
     /**
@@ -119,6 +127,61 @@ public class UserServiceImpl implements UserService {
             logger.error(e.getMessage(),e);
         }
         return i;
+    }
+
+    /**
+     * 用户登录
+     *
+     * @param username
+     * @param password
+     * @return
+     */
+    @Override
+    public MessageResult userLogin(String username, String password) {
+        MessageResult mr = null;
+        try {
+            //先根据用户名查找用户
+            UserExample example = new UserExample();
+            UserExample.Criteria criteria = example.createCriteria();
+            criteria.andUserNameEqualTo(username);
+            //todo 此处有一个bug
+            List<User> userList = userDao.selectByExample(example);
+            //1.校验用户名
+            if (userList == null || userList.size() == 0) {
+                //用户名不存在
+                mr = new MessageResult();
+                mr.setSuccess(false);
+                mr.setMessage("用户名不存在");
+                return mr;
+            }
+            //2.校验密码
+            User user = userList.get(0);
+            String md5DigestAsHex = DigestUtils.md5DigestAsHex(password.getBytes());
+
+            if(!md5DigestAsHex.equals(user.getLoginPassword())){
+                //用户名不存在
+                mr = new MessageResult();
+                mr.setSuccess(false);
+                mr.setMessage("用户名或密码错误");
+                return mr;
+            }
+            //3.用户名和密码均正确 - 把user存入redis缓存服务器
+            String token = UUID.randomUUID().toString();
+            user.setLoginPassword(null);
+            jedisClient.set("TT_TOKEN"+token, JsonUtils.objectToJson(user));
+            //设置过期时间
+            jedisClient.expire("TT_TOKEN"+token,1800);
+            //返回
+            mr = new MessageResult();
+            mr.setSuccess(true);
+            mr.setMessage("登录成功");
+            mr.setData(token);//把key中的部分值返回
+
+        } catch (Exception e) {
+            logger.error(e.getMessage(),e);
+            e.printStackTrace();
+        }
+        return mr;
     }
 
 }

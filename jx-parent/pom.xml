@@ -13,6 +13,7 @@
         <module>../jx-common</module>
         <module>../jx-upload</module>
         <module>../jx-portal-web</module>
+        <module>../tt-sso-web</module>
     </modules>
     <!--分布式工程需要使用依赖的版本号，统一管理-->
     <properties>

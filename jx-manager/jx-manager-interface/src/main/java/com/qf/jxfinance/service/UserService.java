@@ -1,5 +1,6 @@
 package com.qf.jxfinance.service;
 
+import com.qf.jxfinance.common.dto.MessageResult;
 import com.qf.jxfinance.common.dto.Order;
 import com.qf.jxfinance.common.dto.Page;
 import com.qf.jxfinance.common.dto.Result;
@@ -35,4 +36,13 @@ public interface UserService {
      * @return
      */
     int batchForbid(List<Long> ids);
+
+
+    /**
+     * 用户登录
+     * @param username
+     * @param password
+     * @return
+     */
+    MessageResult userLogin(String username, String password);
 }
