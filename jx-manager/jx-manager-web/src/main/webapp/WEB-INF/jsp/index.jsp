@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="js/jquery-easyui-1.5/themes/bootstrap/easyui.css">
     <link rel="stylesheet" href="js/jquery-easyui-1.5/themes/icon.css">
     <link rel="stylesheet" href="css/common.css">
+
 </head>
 <body class="easyui-layout">
 <div data-options="region:'north'" style="height:70px;padding-left:10px;text-align: center;">
@@ -48,6 +49,7 @@
                 <li data-options="attributes:{'href':'fixedtime-list'}">定期理财产品</li>
                 <%--<li data-options="attributes:{'href':'fixedtime-list'}">查询定期理财产品</li>--%>
                 <li data-options="attributes:{'href':'fc-company-list'}">理财公司</li>
+                <li data-options="attributes:{'href':'fc-company-index'}">导入索引</li>
                 <%--<li data-options="attributes:{'href':'fc-company-list'}">查询理财公司</li>--%>
             </ul>
         </div>

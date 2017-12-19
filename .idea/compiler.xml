@@ -7,18 +7,19 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="jx-common" />
+        <module name="jx-dqlc-portal-web" />
         <module name="jx-manager-dao" />
         <module name="jx-manager-interface" />
         <module name="jx-manager-pojo" />
         <module name="jx-manager-service" />
         <module name="jx-manager-web" />
         <module name="jx-portal-web" />
-        <module name="jx-sso-web" />
-        <module name="tt-sso-web" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.7">
+      <module name="app-parent" target="1.7" />
       <module name="jx-common" target="1.7" />
+      <module name="jx-dqlc-portal-web" target="1.7" />
       <module name="jx-manager" target="1.7" />
       <module name="jx-manager-dao" target="1.7" />
       <module name="jx-manager-interface" target="1.7" />
@@ -26,10 +27,8 @@
       <module name="jx-manager-service" target="1.7" />
       <module name="jx-manager-web" target="1.7" />
       <module name="jx-parent" target="1.7" />
-      <module name="jx-portal-web" target="1.7" />
-      <module name="jx-sso-web" target="1.7" />
+      <module name="jx-portal-web" target="1.5" />
       <module name="jx-upload" target="1.7" />
-      <module name="tt-sso-web" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

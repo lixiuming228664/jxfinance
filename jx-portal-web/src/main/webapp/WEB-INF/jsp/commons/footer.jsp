@@ -11,7 +11,12 @@
 
 </style>
 
-<div id="form-footer" class="footer w">
+<div id="form-footer" class="footer w" style="position: absolute;
+bottom: 0;
+width: 100%;
+height: 60px;/*脚部的高度*/
+background: #000000;
+clear:both; ">
     <hr>
     <div class="links">
         <a rel="nofollow" target="_blank" href="#"> 关于我们</a>|
