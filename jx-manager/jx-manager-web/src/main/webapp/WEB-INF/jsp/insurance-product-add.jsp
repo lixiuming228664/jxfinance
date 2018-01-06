@@ -1,6 +1,8 @@
 <%@ page contentType="text/html; charset=UTF-8"
 		 pageEncoding="UTF-8" %>
 
+<div>test commit.</div>
+
 <div class="easyui-panel" title="产品详情" data-options="fit:true">
 	<form class="itemForm" id="itemAddForm" name="itemAddForm" method="post">
 		<div style="margin: 0 auto;text-align: center">
