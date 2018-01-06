@@ -87,8 +87,12 @@ public class CurrentServiceImpl implements CurrentService{
             current.setState(1);
             current.setSetTime(new Date());
             current.setMessage(content);
-            //数据库 字段有 text 属性 要用 这个方法
-            i = currentDao.insertSelective(current);
+
+           /* 这样的url就会就会为 图片地址
+           String [] contens=content.split("\"");
+            current.setUrl(contens[contens.length-6]);
+
+            i = currentDao.insertSelective(current);*/
 
         } catch (Exception e) {
             logger.error(e.getMessage(), e);

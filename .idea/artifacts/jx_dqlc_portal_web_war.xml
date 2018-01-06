@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="jx-dqlc-portal-web:war">
+    <output-path>$PROJECT_DIR$/jx-dqlc-portal-web/target</output-path>
+    <root id="archive" name="jx-dqlc-portal-web.war">
+      <element id="artifact" artifact-name="jx-dqlc-portal-web:war exploded" />
+    </root>
+  </artifact>
+</component>
